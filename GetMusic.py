@@ -1,4 +1,4 @@
-from music21 import *
+import music21 as m21
 import sys
 
 def addMidiExtension(fileName):
@@ -12,7 +12,7 @@ def getMidiFile():
     name = addMidiExtension(fileName)
     
     try:
-        music = converter.parse(name)
+        music = m21.converter.parse(name)
         return music
     except:
         print("Could not open midi file!")
