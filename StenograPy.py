@@ -27,6 +27,8 @@ def findWhereZeroesMustBeAdded(bytesSeparatedBySpace):
       locationsToChange.append((8-currentByteLength, currentByteStartIndex))
       currentByteStartIndex = index+1
       currentByteLength = 0
+    elif index == len(bytesSeparatedBySpace)-1 and currentByteLength < 7:
+      locationsToChange.append((7-currentByteLength, currentByteStartIndex))
     else:
       currentByteLength += 1
   return locationsToChange
@@ -50,6 +52,7 @@ def convertStringToBinary(input):
   byteList = bytes(input, "ascii")
   bytesSeparatedBySpace = ' '.join(["{0:b}".format(x) for x in byteList])
   formatedBytesSeparatedBySpace = makeBytesLengthEight(bytesSeparatedBySpace)
+  print(formatedBytesSeparatedBySpace)
   listOfInts = turnStringOfBinaryIntoListOfInts(formatedBytesSeparatedBySpace)
   return listOfInts
 
