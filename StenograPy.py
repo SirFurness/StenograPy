@@ -7,7 +7,7 @@ Created on Tue Jun 26 13:49:21 2018
 def getInputString():
   pass
 
-def convertStringToBinary():
+def convertStringToBinary(input):
   pass
 
 def encodeFile(binary, inputFilename, outputFilename):
@@ -29,7 +29,7 @@ def encodeByte(byte, bit):
 
 if __name__ == "__main__":
   input = getInputString()
-  binary = convertStringToBinary()
+  binary = convertStringToBinary(input)
 
   inputFilename = getInputFilename()
   outputFilename = getOutputFilename()
