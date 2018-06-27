@@ -52,7 +52,6 @@ def convertStringToBinary(input):
   byteList = bytes(input, "ascii")
   bytesSeparatedBySpace = ' '.join(["{0:b}".format(x) for x in byteList])
   formatedBytesSeparatedBySpace = makeBytesLengthEight(bytesSeparatedBySpace)
-  print(formatedBytesSeparatedBySpace)
   listOfInts = turnStringOfBinaryIntoListOfInts(formatedBytesSeparatedBySpace)
   return listOfInts
 
