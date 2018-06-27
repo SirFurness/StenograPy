@@ -17,6 +17,7 @@ def encodeFile(binary, inputFilename, outputFilename):
     while byte:
       encodedByte = encodeByte(byte, binary[currentBit])
       outputFile.write(encodedByte)
+      currentBit += 1
       byte = inputFile.read(1)
 
 def encodeByte(byte, bit):
