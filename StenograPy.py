@@ -33,7 +33,9 @@ def encodeByte(byte, bit):
   if bit == 0:
     return bytes(byte[0] & b'\xfe'[0])
   else:
-    return bytes(byte[0] | b'\xff'[0])
+    return bytes(byte[0] | b'\xff'[0])  
+def byteListToString(bytelist):
+  b''.join(bytelist)
 
 
 if __name__ == "__main__":
