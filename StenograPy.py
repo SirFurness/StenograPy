@@ -8,7 +8,7 @@ def getInputString():
   return input("Please input the string to encode:\n")
 
 def convertStringToBinary(input):
-  a_bytes = bytes(s, "ascii")
+  a_bytes = bytes(input, "ascii")
   b = ' '.join(["{0:b}".format(x) for x in a_bytes])
   return b
 
