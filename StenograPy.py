@@ -15,7 +15,6 @@ def getInputString():
 
 def turnStringOfBinaryIntoListOfInts(b):
   outputList = []
-  intermediateList = []
   for char in b:
     if char == '0' or char == '1':
       outputList.append(int(char))
