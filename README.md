@@ -1,2 +1,2 @@
 # StenograPy
-Encoding messages in midi files.
+Encoding messages in files
