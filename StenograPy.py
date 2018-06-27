@@ -18,7 +18,7 @@ def turnStringOfBinaryIntoListOfInts(b):
 def insertStr(string, strToInsert, index):
     return string[:index] + strToInsert + string[index:]
 
-def makeBytesLengthEight(bytesSeparatedBySpace):
+def findWhereZeroesMustBeAdded(bytesSeparatedBySpace):
   currentByteLength = 0
   currentByteStartIndex = 0
   locationsToChange = []
@@ -29,6 +29,9 @@ def makeBytesLengthEight(bytesSeparatedBySpace):
       currentByteLength = 0
     else:
       currentByteLength += 1
+  return locationsToChange
+
+def addZeroesAtEachLocation(locationsToChange, bytesSeparatedBySpace):
   zeroesAdded = 0
   output = bytesSeparatedBySpace
   for (zeroesToBeAdded, oldIndex) in locationsToChange:
@@ -36,6 +39,11 @@ def makeBytesLengthEight(bytesSeparatedBySpace):
     stringToBeAdded = "0" * zeroesToBeAdded
     output = insertStr(output, stringToBeAdded, index)
     zeroesAdded += zeroesToBeAdded
+  return output
+
+def makeBytesLengthEight(bytesSeparatedBySpace):
+  locationsToChange = findWhereZeroesMustBeAdded(bytesSeparatedBySpace)
+  output = addZeroesAtEachLocation(locationsToChange, bytesSeparatedBySpace)
   return output
 
 def convertStringToBinary(input):
