@@ -8,7 +8,9 @@ def getInputString():
   return input("Please input the string to encode:\n")
 
 def convertStringToBinary(input):
-  pass
+  a_bytes = bytes(s, "ascii")
+  b = ' '.join(["{0:b}".format(x) for x in a_bytes])
+  return b
 
 def getInputFilename():
   return input("Input the name of the input file (with extension):\n")
