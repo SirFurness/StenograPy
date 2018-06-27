@@ -5,7 +5,7 @@ Created on Tue Jun 26 13:49:21 2018
 """
 class binTools:
   #convert string to hex
-  def strToBin(s):
+  def strToBin(self, s):
     a_bytes = bytes(s, "ascii")
     b = ' '.join(["{0:b}".format(x) for x in a_bytes])
     return b
