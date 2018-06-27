@@ -8,7 +8,9 @@ def getInputString():
   pass
 
 def convertStringToBinary(input):
-  pass
+  a_bytes = bytes(s, "ascii")
+  b = ' '.join(["{0:b}".format(x) for x in a_bytes])
+  return b
 
 def encodeFile(binary, inputFilename, outputFilename):
   with open(inputFilename, "rb") as inputFile, open(outputFilename, "w") as outputFile:
