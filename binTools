@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun 26 13:49:21 2018
+
+@author: Joel Velez
+
+A program to hide text in image or data files
+"""
+#convert string to hex
+def strToBin(s):
+  a_bytes = bytes(s, "ascii")
+  b = ' '.join(["{0:b}".format(x) for x in a_bytes])
+  return b
+#splits the string into individual character (or at least there hex values)
+def splitByN( seq, n ):
+    """A generator to divide a sequence into chunks of n units."""
+    while seq:
+        yield seq[:n]
+        seq = seq[n:]
+
+print(strToBin('abcdefghijklmnopqrstuvwxyz'))
