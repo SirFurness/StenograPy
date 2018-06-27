@@ -19,13 +19,14 @@ def getOutputFilename():
   return input("Input the name of the output file (with extension):\n")
 
 def encodeFile(binary, inputFilename, outputFilename):
-  with open(inputFilename, "rb") as inputFile, open(outputFilename, "w") as outputFile:
+  with open(inputFilename, "rb") as inputFile, open(outputFilename, "wb") as outputFile:
     currentBit = 0
     byte = inputFile.read(1)
     while byte:
-      encodedByte = encodeByte(byte, binary[currentBit])
-      outputFile.write(encodedByte)
-      currentBit += 1
+      if currentBit < len(binary):
+        encodedByte = encodeByte(byte, binary[currentBit])
+        outputFile.write(encodedByte)
+        currentBit += 1
       byte = inputFile.read(1)
 
 def encodeByte(byte, bit):
@@ -36,8 +37,8 @@ def encodeByte(byte, bit):
 
 
 if __name__ == "__main__":
-  input = getInputString()
-  binary = convertStringToBinary(input)
+  inputString = getInputString()
+  binary = convertStringToBinary(inputString)
 
   inputFilename = getInputFilename()
   outputFilename = getOutputFilename()
