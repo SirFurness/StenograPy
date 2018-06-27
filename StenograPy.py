@@ -5,10 +5,16 @@ Created on Tue Jun 26 13:49:21 2018
 """
 
 def getInputString():
-  pass
+  return input("Please input the string to encode:\n")
 
 def convertStringToBinary(input):
   pass
+
+def getInputFilename():
+  return input("Input the name of the input file (with extension):\n")
+
+def getOutputFilename():
+  return input("Input the name of the output file (with extension):\n")
 
 def encodeFile(binary, inputFilename, outputFilename):
   with open(inputFilename, "rb") as inputFile, open(outputFilename, "w") as outputFile:
