@@ -10,10 +10,27 @@ def getInputString():
 def convertStringToBinary():
   pass
 
-def encodeFile():
-  pass
+def encodeFile(binary, inputFilename, outputFilename):
+  with open(inputFilename, "rb") as inputFile, open(outputFilename, "w") as outputFile:
+    currentBit = 0
+    byte = inputFile.read(1)
+    while byte:
+      encodedByte = encodeByte(byte, binary[currentBit])
+      outputFile.write(encodedByte)
+      byte = inputFile.read(1)
+
+def encodeByte(byte, bit):
+  if bit == 0:
+    return bytes(byte[0] & b'\xfe'[0])
+  else:
+    return bytes(byte[0] | b'\xff'[0])
+
 
 if __name__ == "__main__":
   input = getInputString()
   binary = convertStringToBinary()
-  encodeFile(binary)
+
+  inputFilename = getInputFilename()
+  outputFilename = getOutputFilename()
+
+  encodeFile(binary, inputFilename, outputFilename)
