@@ -4,6 +4,12 @@ Created on Tue Jun 26 13:49:21 2018
 @author: Joel Velez and Eric Paul
 """
 
+def getInputFilename():
+  return input("Input the name of the input file (with extension):\n")
+
+def getOutputFilename():
+  return input("Input the name of the output file (with extension):\n")
+
 def getInputString():
   return input("Please input the string to encode:\n")
 
@@ -55,12 +61,6 @@ def convertStringToBinary(input):
   print(formatedBytesSeparatedBySpace)
   listOfInts = turnStringOfBinaryIntoListOfInts(formatedBytesSeparatedBySpace)
   return listOfInts
-
-def getInputFilename():
-  return input("Input the name of the input file (with extension):\n")
-
-def getOutputFilename():
-  return input("Input the name of the output file (with extension):\n")
 
 def encodeFile(binary, inputFilename, outputFilename):
   with open(inputFilename, "rb") as inputFile, open(outputFilename, "wb") as outputFile:
