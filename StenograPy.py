@@ -83,9 +83,6 @@ def encode():
   inputString = getInputString()
   binary = convertStringToBinary(inputString)
 
-  print(type(binary))
-  print(binary)
-
   inputFilename = getInputFilename()
   outputFilename = getOutputFilename()
 
@@ -96,18 +93,18 @@ def decodeFile(filename):
   output = ""
   with open(filename, "rb") as inputFile:
     byte = inputFile.read(1)
-    i = 0
+    bitsProcessed = 0
     while byte:
-      if i == 8:
+      if bitsProcessed == 8:
         if int(binary,2) == 0:
           break
         output += chr(int(binary, 2))
         binary = ""
-        i = 0
+        bitsProcessed = 0
       decodedByte = decodeByte(byte)
       binary += decodedByte
       byte = inputFile.read(1)
-      i += 1
+      bitsProcessed += 1
   print(output)
 
 def decodeByte(byte):
