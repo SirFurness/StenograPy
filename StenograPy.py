@@ -5,5 +5,5 @@ Created on Tue Jun 26 13:49:21 2018
 """
 import binTools as bT
 class writeData:
-  def __init__(self):
-    
+  def __init__(self, filename, s):
+    self.stringToBeHidden = s
